@@ -1,3 +1,14 @@
+package com.example.Entities;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 @Entity
 public class UsageHistory {
     @Id
@@ -14,5 +25,69 @@ public class UsageHistory {
     private String reason;
     private String comments;
 
-    // Геттеры и сеттеры
+    
+    public UsageHistory() {}
+
+    public UsageHistory(Equipment equipment, Users user, LocalDate startDate, LocalDate endDate, String reason, String comments) {
+        this.equipment = equipment;
+        this.user = user;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.reason = reason;
+        this.comments = comments;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 }

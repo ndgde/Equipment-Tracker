@@ -2,3 +2,4 @@ about.txt
 target/
 Makefile
 .vscode/
+logs/

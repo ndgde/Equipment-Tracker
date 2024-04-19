@@ -19,7 +19,7 @@ public class UsageHistoryController {
         this.usageHistoryRepository = usageHistoryRepository;
     }
 
-    @GetMapping("/usagehistory")
+    @GetMapping("/usageHistory")
     public List<UsageHistory> getAllUsageHistory() {
         return usageHistoryRepository.findAll();
     }

@@ -2,24 +2,31 @@ package com.example.Entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name = "Usage_History")
 public class UsageHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "equipment_id")
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Equipment_ID")
     private Equipment equipment;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users user;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "User_ID")
+    private User user;
+    
     private LocalDate startDate;
     private LocalDate endDate;
     private String reason;
@@ -28,7 +35,7 @@ public class UsageHistory {
     
     public UsageHistory() {}
 
-    public UsageHistory(Equipment equipment, Users user, LocalDate startDate, LocalDate endDate, String reason, String comments) {
+    public UsageHistory(Equipment equipment, User user, LocalDate startDate, LocalDate endDate, String reason, String comments) {
         this.equipment = equipment;
         this.user = user;
         this.startDate = startDate;
@@ -46,7 +53,7 @@ public class UsageHistory {
         return equipment;
     }
 
-    public Users getUser() {
+    public User getUser() {
         return user;
     }
 
@@ -71,7 +78,7 @@ public class UsageHistory {
         this.equipment = equipment;
     }
 
-    public void setUser(Users user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

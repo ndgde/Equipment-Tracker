@@ -62,4 +62,11 @@ public class User {
     public void setContactInformation(String contactInformation) {
         this.contactInformation = contactInformation;
     }
+
+    public void set(String name, String position, String department, String contactInformation) {
+        setName(name);
+        setPosition(position);
+        setDepartment(department);
+        setContactInformation(contactInformation);
+    }
 }

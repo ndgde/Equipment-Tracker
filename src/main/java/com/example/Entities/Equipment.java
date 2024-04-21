@@ -96,4 +96,14 @@ public class Equipment {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public void set(String name, String type, String description, LocalDate acquisitionDate, double cost, String status, String image) {
+        setName(name);
+        setType(type);
+        setDescription(description);
+        setAcquisitionDate(acquisitionDate);
+        setCost(cost);
+        setStatus(status);
+        setImage(image);
+    }
 }

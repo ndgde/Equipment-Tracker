@@ -97,4 +97,13 @@ public class UsageHistory {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+    public void set(Equipment equipment, User user, LocalDate starDate, LocalDate endDate, String reason, String comments) {
+        setEquipment(equipment);
+        setUser(user);
+        setStartDate(endDate);
+        setEndDate(endDate);
+        setReason(reason);
+        setComments(comments);
+    }
 }

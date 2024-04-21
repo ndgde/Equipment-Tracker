@@ -25,6 +25,13 @@ public class User {
         this.contactInformation = contactInformation;
     }
 
+    public User(User user) {
+        this.name               = user.getName();
+        this.position           = user.getPosition();
+        this.department         = user.getDepartment();
+        this.contactInformation = user.getContactInformation();
+    }
+
 
     public Long getId() {
         return id;

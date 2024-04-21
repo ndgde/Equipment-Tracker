@@ -11,10 +11,12 @@ This project is undertaken to develop equipment tracker REST-service in educatio
 
 ## Endpoints
 
-1. To retrieve the total cost of equipment of a specified type:
+1. CRUD operations for each table.
+
+2. To retrieve the total cost of equipment of a specified type:
    - The equipment type is passed as a parameter.
 
-2. To retrieve information about equipment and its current user:
+3. To retrieve information about equipment and its current user:
    - The equipment ID is passed as a parameter.
 
 ## Schema Description

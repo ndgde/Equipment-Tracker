@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class UsageHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long      id;
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Equipment_ID")
@@ -25,23 +25,33 @@ public class UsageHistory {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "User_ID")
-    private User user;
+    private User      user;
     
     private LocalDate startDate;
     private LocalDate endDate;
-    private String reason;
-    private String comments;
+    private String    reason;
+    private String    comments;
 
     
     public UsageHistory() {}
 
-    public UsageHistory(Equipment equipment, User user, LocalDate startDate, LocalDate endDate, String reason, String comments) {
+    public UsageHistory(Equipment equipment, User user, LocalDate startDate, 
+        LocalDate endDate, String reason, String comments) {
         this.equipment = equipment;
-        this.user = user;
+        this.user      = user;
         this.startDate = startDate;
-        this.endDate = endDate;
-        this.reason = reason;
-        this.comments = comments;
+        this.endDate   = endDate;
+        this.reason    = reason;
+        this.comments  = comments;
+    }
+    
+    public UsageHistory(UsageHistory usageHistory) {
+        this.equipment = usageHistory.getEquipment();
+        this.user      = usageHistory.getUser();
+        this.startDate = usageHistory.getStartDate();
+        this.endDate   = usageHistory.getEndDate();
+        this.reason    = usageHistory.getReason();
+        this.comments  = usageHistory.getComments();
     }
 
 
@@ -99,11 +109,11 @@ public class UsageHistory {
     }
 
     public void set(Equipment equipment, User user, LocalDate starDate, LocalDate endDate, String reason, String comments) {
-        setEquipment(equipment);
-        setUser(user);
-        setStartDate(endDate);
-        setEndDate(endDate);
-        setReason(reason);
-        setComments(comments);
+        this.equipment = equipment;
+        this.user      = user;
+        this.startDate = starDate;
+        this.endDate   = endDate;
+        this.reason    = reason;
+        this.comments  = comments;
     }
 }

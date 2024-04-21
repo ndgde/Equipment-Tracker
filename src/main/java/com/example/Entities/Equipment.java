@@ -13,26 +13,37 @@ import javax.persistence.Table;
 public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String type;
-    private String description;
+    private Long      id;
+    private String    name;
+    private String    type;
+    private String    description;
     private LocalDate acquisitionDate;
-    private double cost;
-    private String status;
-    private String image;
+    private double    cost;
+    private String    status;
+    private String    image;
 
 
     public Equipment() {}
 
-    public Equipment(String name, String type, String description, LocalDate acquisitionDate, double cost, String status, String image) {
-        this.name = name;
-        this.type = type;
-        this.description = description;
+    public Equipment(String name, String type, String description, 
+        LocalDate acquisitionDate, double cost, String status, String image) {
+        this.name            = name;
+        this.type            = type;
+        this.description     = description;
         this.acquisitionDate = acquisitionDate;
-        this.cost = cost;
-        this.status = status;
-        this.image = image;
+        this.cost            = cost;
+        this.status          = status;
+        this.image           = image;
+    }
+
+    public Equipment(Equipment equipment) {
+        this.name            = equipment.getName();
+        this.type            = equipment.getType();
+        this.description     = equipment.getDescription();
+        this.acquisitionDate = equipment.getAcquisitionDate();
+        this.cost            = equipment.getCost();
+        this.status          = equipment.getStatus();
+        this.image           = equipment.getImage();
     }
 
 
@@ -97,13 +108,14 @@ public class Equipment {
         this.image = image;
     }
 
-    public void set(String name, String type, String description, LocalDate acquisitionDate, double cost, String status, String image) {
-        setName(name);
-        setType(type);
-        setDescription(description);
-        setAcquisitionDate(acquisitionDate);
-        setCost(cost);
-        setStatus(status);
-        setImage(image);
+    public void set(String name, String type, String description, 
+        LocalDate acquisitionDate, double cost, String status, String image) {
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.acquisitionDate = acquisitionDate;
+        this.cost = cost;
+        this.status = status;
+        this.image = image;
     }
 }

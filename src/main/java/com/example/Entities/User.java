@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long   id;
     private String name;
     private String position;
     private String department;
@@ -19,9 +19,9 @@ public class User {
     public User() {}
 
     public User(String name, String position, String department, String contactInformation) {
-        this.name = name;
-        this.position = position;
-        this.department = department;
+        this.name               = name;
+        this.position           = position;
+        this.department         = department;
         this.contactInformation = contactInformation;
     }
 
@@ -64,9 +64,9 @@ public class User {
     }
 
     public void set(String name, String position, String department, String contactInformation) {
-        setName(name);
-        setPosition(position);
-        setDepartment(department);
-        setContactInformation(contactInformation);
+        this.name               = name;
+        this.position           = position;
+        this.department         = department;
+        this.contactInformation = contactInformation;
     }
 }

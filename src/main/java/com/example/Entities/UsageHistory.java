@@ -1,8 +1,6 @@
 package com.example.Entities;
 
 import java.time.LocalDate;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,11 +17,11 @@ public class UsageHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long      id;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "Equipment_ID")
     private Equipment equipment;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "User_ID")
     private User      user;
     

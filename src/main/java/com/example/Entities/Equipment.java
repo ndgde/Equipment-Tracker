@@ -5,21 +5,35 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "Equipment")
+@Table(name = "equipments")
 public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "id")
     private Long      id;
+
+    @JoinColumn(name = "name")
     private String    name;
+
+    @JoinColumn(name = "type")
     private String    type;
+
+    @JoinColumn(name = "description")
     private String    description;
+
+    @JoinColumn(name = "acquisition_date")
     private LocalDate acquisitionDate;
+
+    @JoinColumn(name = "cost")
     private double    cost;
+
+    @JoinColumn(name = "status")
     private String    status;
+
+    @JoinColumn(name = "image")
     private String    image;
 
 

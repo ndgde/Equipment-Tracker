@@ -11,23 +11,31 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Usage_History")
+@Table(name = "usage_history")
 public class UsageHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "id")
     private Long      id;
     
     @ManyToOne
-    @JoinColumn(name = "Equipment_ID")
+    @JoinColumn(name = "equipment_id")
     private Equipment equipment;
     
     @ManyToOne
-    @JoinColumn(name = "User_ID")
+    @JoinColumn(name = "user_id")
     private User      user;
     
+    @JoinColumn(name = "start_date")
     private LocalDate startDate;
+
+    @JoinColumn(name = "end_date")
     private LocalDate endDate;
+
+    @JoinColumn(name = "reason")
     private String    reason;
+
+    @JoinColumn(name = "comments")
     private String    comments;
 
     

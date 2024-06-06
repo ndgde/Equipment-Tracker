@@ -1,7 +1,5 @@
-about.txt
 target/
 Makefile
 .vscode/
 logs/
-notes.txt
 src/main/resources/keystore/

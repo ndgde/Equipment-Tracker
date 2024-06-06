@@ -3,16 +3,26 @@ package com.example.Entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "id")
     private Long   id;
+
+    @JoinColumn(name = "name")
     private String name;
+
+    @JoinColumn(name = "position")
     private String position;
+
+    @JoinColumn(name = "department")
     private String department;
+
+    @JoinColumn(name = "contact_information")
     private String contactInformation;
 
 

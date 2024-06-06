@@ -28,7 +28,7 @@ public class EquipmentController extends BaseController<Equipment, Long>{
         this.usageHistoryRepository = usageHistoryRepository;
     }
 
-    @GetMapping("/cost")
+    @GetMapping("/cost/type={type}")
     public double getCostByType(@RequestParam String type) {
         return equipmentRepository.findByType(type)
                 .stream()

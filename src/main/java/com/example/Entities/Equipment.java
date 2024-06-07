@@ -36,11 +36,14 @@ public class Equipment {
     @JoinColumn(name = "image")
     private String    image;
 
+    @JoinColumn(name = "state")
+    private String state;
+
 
     public Equipment() {}
 
     public Equipment(String name, String type, String description, 
-        LocalDate acquisitionDate, double cost, String status, String image) {
+        LocalDate acquisitionDate, double cost, String status, String image, String state) {
         this.name            = name;
         this.type            = type;
         this.description     = description;
@@ -58,6 +61,7 @@ public class Equipment {
         this.cost            = equipment.getCost();
         this.status          = equipment.getStatus();
         this.image           = equipment.getImage();
+        this.state           = equipment.getState();
     }
 
 
@@ -93,6 +97,10 @@ public class Equipment {
         return image;
     }
 
+    public String getState() {
+        return state;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -120,6 +128,10 @@ public class Equipment {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public void set(String name, String type, String description, 

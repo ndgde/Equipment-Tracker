@@ -60,8 +60,9 @@ CREATE TABLE `equipments` (
   `cost` decimal(10,2) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
   `Image` blob DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,8 +72,8 @@ CREATE TABLE `equipments` (
 LOCK TABLES `equipments` WRITE;
 /*!40000 ALTER TABLE `equipments` DISABLE KEYS */;
 INSERT INTO `equipments` VALUES
-(5,'Updated Equipment Name','Updated Type','Updated Description','2024-04-23',1500.00,'Inactive','updated_example.jpg'),
-(7,'Equipment 1','Type 1','Description 1','2024-04-22',1000.00,'Active','example.jpg');
+(5,'Updated Equipment Name','Updated Type','Updated Description','2024-04-23',1500.00,'Inactive','updated_example.jpg','good'),
+(7,'Equipment 1','Type 1','Description 1','2024-04-22',1000.00,'Active','example.jpg','new');
 /*!40000 ALTER TABLE `equipments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +97,7 @@ CREATE TABLE `usage_history` (
   KEY `User_ID` (`user_id`),
   CONSTRAINT `usage_history_ibfk_1` FOREIGN KEY (`equipment_id`) REFERENCES `equipments` (`id`),
   CONSTRAINT `usage_history_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +126,7 @@ CREATE TABLE `users` (
   `department` varchar(255) DEFAULT NULL,
   `contact_information` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-06 14:12:51
+-- Dump completed on 2024-06-07  9:39:42
